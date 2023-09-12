@@ -4,23 +4,23 @@ services:
   - docker
 
 before_install:
-  - docker build -t aww-umbrage/react-test -f ./client/Dockerfile.dev ./client
+  - docker build -t awwumbrage/react-test -f ./client/Dockerfile.dev ./client
 
 script:
-  - docker run -e CI=true aww-umbrage/react-test npm test
+  - docker run -e CI=true awwumbrage/react-test npm test
 
 after_success:
-  - docker build -t aww-umbrage/multi-client ./client
-  - docker build -t aww-umbrage/multi-nginx ./nginx
-  - docker build -t aww-umbrage/multi-server ./server
-  - docker build -t aww-umbrage/multi-worker ./worker
+  - docker build -t awwumbrage/multi-client ./client
+  - docker build -t awwumbrage/multi-nginx ./nginx
+  - docker build -t awwumbrage/multi-server ./server
+  - docker build -t awwumbrage/multi-worker ./worker
   # Log in to the docker CLI
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   # Push images to docker hub
-  - docker push aww-umbrage/multi-client
-  - docker push aww-umbrage/multi-nginx
-  - docker push aww-umbrage/multi-server
-  - docker push aww-umbrage/multi-worker
+  - docker push awwumbrage/multi-client
+  - docker push awwumbrage/multi-nginx
+  - docker push awwumbrage/multi-server
+  - docker push awwumbrage/multi-worker
 
 deploy:
   provider: elasticbeanstalk

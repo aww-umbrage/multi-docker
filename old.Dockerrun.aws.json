@@ -3,25 +3,25 @@
   "containerDefinitions": [
     {
       "name": "client",
-      "image": "aww-umbrage/multi-client",
+      "image": "awwumbrage/multi-client",
       "hostname": "client",
       "essential": false
     },
     {
       "name": "server",
-      "image": "aww-umbrage/multi-server",
+      "image": "awwumbrage/multi-server",
       "hostname": "api",
       "essential": false
     },
     {
       "name": "worker",
-      "image": "aww-umbrage/multi-worker",
+      "image": "awwumbrage/multi-worker",
       "hostname": "worker",
       "essential": false
     },
     {
       "name": "nginx",
-      "image": "aww-umbrage/multi-nginx",
+      "image": "awwumbrage/multi-nginx",
       "hostname": "nginx",
       "essential": true,
       "portMappings": [
