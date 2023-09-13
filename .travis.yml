@@ -4,7 +4,8 @@ services:
   - docker
 
 before_install:
-  - cd client && ls
+  - cd client
+  - ls
   - docker build -t awwumbrage/react-test -f Dockerfile.dev .
 
 script:
